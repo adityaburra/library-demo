@@ -7,6 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <link rel="stylesheet" href="/css/bootstrap.min.css" />
 <script src="/js/jquery-3.1.1.min.js"></script>
+<script src="/js/custom.js"></script>
 </head>
 <body>
 	<div class="container">
@@ -36,24 +37,5 @@
 		<div id="result"></div>
 		<a th:href="@{/}">Return to home</a>
 	</div>
-	<script>
-		$(document).ready(
-				function() {
-					$("button").click(
-							function() {
-								$.ajax({
-									url : "books",
-									data : {
-										userId : this.id
-									},
-									success : function(result) {
-										$("#result").html(
-												'<h2>Books lent to the selected user </h2>'
-														+ result);
-									}
-								});
-							});
-				});
-	</script>
 </body>
 </html>
