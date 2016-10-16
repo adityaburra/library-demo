@@ -14,7 +14,14 @@ cd library-demo
 mvn spring-boot:run
 ```
 
-To run test cases
+## How to access the application?
+
+Use the following url on the web browser
+
+```
+http://localhost:8080 
+```
+## To run test cases
 ```
 mvn test
 ```
