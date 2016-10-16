@@ -29,6 +29,7 @@ mvn test
 * Spring Boot
 * H2 In Memory Database
 * Thymeleaf Template Engine
+* Bootstrap
 * jQuery
 * Maven
 
