@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:th="http://www.thymeleaf.org">
+<head>
+<title>Library Users</title>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<link rel="stylesheet" href="/css/bootstrap.min.css" />
+<script src="/js/jquery-3.1.1.min.js"></script>
+</head>
+<body>
+	<div class="container">
+		<h2>Library users</h2>
+		<p>The table below shows the list of users:</p>
+		<table class="table table-bordered">
+			<thead>
+				<tr>
+					<th>#</th>
+					<th>Name</th>
+					<th>Phone Number</th>
+					<th>Email</th>
+					<th>Books Lent</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr th:each="user : ${users}">
+					<td th:text="${user.id}"></td>
+					<td th:text="${user.name}"></td>
+					<td th:text="${user.phoneNumber}"></td>
+					<td th:text="${user.email}"></td>
+					<td><button class="btn btn-primary" th:id="${user.id}">click
+							here</button></td>
+				</tr>
+			</tbody>
+		</table>
+		<div id="result"></div>
+		<a th:href="@{/}">Return to home</a>
+	</div>
+	<script>
+		$(document).ready(
+				function() {
+					$("button").click(
+							function() {
+								$.ajax({
+									url : "books",
+									data : {
+										userId : this.id
+									},
+									success : function(result) {
+										$("#result").html(
+												'<h2>Books lent to the selected user </h2>'
+														+ result);
+									}
+								});
+							});
+				});
+	</script>
+</body>
+</html>

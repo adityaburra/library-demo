@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:th="http://www.thymeleaf.org">
+<head>
+<title>Books Catalogue</title>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<link rel="stylesheet" href="/css/bootstrap.min.css" />
+</head>
+<body>
+	<div class="container">
+		<h2>Book Catalogue</h2>
+		<p>The table below shows the list of books:</p>
+		<div th:fragment="booksLent">
+			<table class="table table-hover">
+				<thead>
+					<tr>
+						<th>#</th>
+						<th>Title</th>
+						<th>Author</th>
+						<th>ISBN</th>
+					</tr>
+				</thead>
+				<tbody>
+					<tr th:each="book, iterStat: ${books}">
+						<td th:text="${iterStat.index + 1}"></td>
+						<td th:text="${book.title}"></td>
+						<td th:text="${book.author}"></td>
+						<td th:text="${book.isbn}"></td>
+					</tr>
+				</tbody>
+			</table>
+		</div>
+		<p>
+			<a th:href="@{/}">Return to home</a>
+		</p>
+	</div>
+</body>
+</html>
+
