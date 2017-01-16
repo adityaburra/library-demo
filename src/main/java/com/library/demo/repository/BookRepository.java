@@ -22,6 +22,6 @@ public interface BookRepository extends CrudRepository<Book, Integer> {
 	 *            - persistence entity
 	 * @return bookList - list of books lent to the given user
 	 */
-	public List<Book> findByUser(User user);
+    List<Book> findByUser(User user);
 
 }

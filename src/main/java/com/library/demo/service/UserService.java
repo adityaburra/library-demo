@@ -23,7 +23,7 @@ public class UserService {
 
 	public List<User> findAllUsers() {
 
-		List<User> users = new ArrayList<User>();
+		List<User> users = new ArrayList<>();
 
 		userRepository.findAll().iterator().forEachRemaining(users::add);
 

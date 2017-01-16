@@ -31,7 +31,7 @@ public class BookService {
 	 */
 	public List<Book> findBooks(Integer userId) {
 
-		List<Book> books = new ArrayList<Book>();
+		List<Book> books = new ArrayList<>();
 
 		if (null == userId) {
 			bookRepository.findAll().iterator().forEachRemaining(books::add);

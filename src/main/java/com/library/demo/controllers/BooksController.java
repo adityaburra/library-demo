@@ -35,7 +35,7 @@ public class BooksController {
 	 * @return view - the name of the page to be rendered
 	 */
 	@RequestMapping(path = "/books", method = RequestMethod.GET)
-	public String retriveBooks(@RequestParam(value = "userId", required = false) Integer userId, Model model) {
+	public String retrieveBooks(@RequestParam(value = "userId", required = false) Integer userId, Model model) {
 		model.addAttribute(BOOKS, bookService.findBooks(userId));
 		return decideView(userId);
 	}
