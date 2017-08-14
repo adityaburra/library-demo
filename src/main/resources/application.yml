@@ -1,0 +1,9 @@
+spring:
+  h2:
+    console:
+      enabled: true
+      path: /console/
+  jpa:
+    generate-ddl: true
+    hibernate:
+      ddl-auto: none
